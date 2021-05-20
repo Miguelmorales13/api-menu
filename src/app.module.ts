@@ -28,7 +28,7 @@ import { LoggerMiddleware } from './middlewares/logger.middleware';
 
 @Module({
   imports: [
-    		ServeStaticModule.forRoot({
+    ServeStaticModule.forRoot({
 			rootPath: path.join(__dirname, '..', 'public', 'uploads'),
 			renderPath: '/uploads',
 			serveRoot: '/uploads'
