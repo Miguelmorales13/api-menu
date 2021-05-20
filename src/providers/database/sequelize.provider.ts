@@ -22,7 +22,7 @@ export const databaseProviders = [
         dialect: _config.get('SEQUELIZE_TYPE'),
         host: _config.get('SEQUELIZE_HOST'),
         port: _config.get('SEQUELIZE_PORT'),
-
+        ssl:true,
         username: _config.get('SEQUELIZE_USERNAME'),
         password: _config.get('SEQUELIZE_PASSWORD'),
         database: _config.get('SEQUELIZE_DATABASE'),
