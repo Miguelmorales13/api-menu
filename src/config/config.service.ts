@@ -81,6 +81,6 @@ export class ConfigService {
    * @returns get any config
    */
   get(key: string): any {
-    return this.envConfig[key];
+    return process.env[key];
   }
 }
