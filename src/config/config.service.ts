@@ -26,8 +26,8 @@ export class ConfigService {
     // console.log(filePath);
 
     try {
-      const config = dotenv.parse(fs.readFileSync(filePath));
-      this.envConfig = this.validateInput(config);
+      // const config = dotenv.parse(fs.readFileSync(filePath));
+      // this.envConfig = this.validateInput(config);
     } catch (e) {
       console.log(e);
     }
