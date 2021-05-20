@@ -65,10 +65,7 @@ export class HttpErrorFilter implements ExceptionFilter {
 
     // @ts-ignore
     // @ts-ignore
-    const wheree: any =
-      exception.message && exception.message.where
-        ? exception.message.where
-        : 'SERVER';
+    const wheree: any = exception.message && exception.message.where ? exception.message.where : 'SERVER';
     const errorResponse = {
       code: status,
       timestamps: new Date().toLocaleDateString(),

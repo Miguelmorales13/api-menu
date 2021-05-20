@@ -18,20 +18,18 @@ export const databaseProviders = [
   {
     provide: 'SEQUELIZE',
     useFactory: async (_config: ConfigService) => {
-      let sequelize = null;
-      if (_config.get('NODE_ENV') == 'production') {
-        sequelize = new Sequelize(_config.get('DATABASE_URL'));
-      } else {
-        sequelize = new Sequelize({
-          dialect: _config.get('SEQUELIZE_TYPE'),
-          host: _config.get('SEQUELIZE_HOST'),
-          port: _config.get('SEQUELIZE_PORT'),
-          ssl: true,
-          username: _config.get('SEQUELIZE_USERNAME'),
-          password: _config.get('SEQUELIZE_PASSWORD'),
-          database: _config.get('SEQUELIZE_DATABASE'),
-        });
-      }
+      const sequelize = new Sequelize(
+        _config.get('NODE_ENV') == 'production'
+          ? _config.get('DATABASE_URL')
+          : {
+              dialect: _config.get('SEQUELIZE_TYPE'),
+              host: _config.get('SEQUELIZE_HOST'),
+              port: _config.get('SEQUELIZE_PORT'),
+              username: _config.get('SEQUELIZE_USERNAME'),
+              password: _config.get('SEQUELIZE_PASSWORD'),
+              database: _config.get('SEQUELIZE_DATABASE'),
+            }
+      );
       sequelize.addModels([
         Rol,
         Module,
