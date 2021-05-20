@@ -29,10 +29,10 @@ import { LoggerMiddleware } from './middlewares/logger.middleware';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-			rootPath: path.join(__dirname, '..', 'public', 'uploads'),
-			renderPath: '/uploads',
-			serveRoot: '/uploads'
-		}),
+      rootPath: path.join(__dirname, '..', 'public', 'uploads'),
+      renderPath: '/uploads',
+      serveRoot: '/uploads',
+    }),
     MulterModule.registerAsync({
       imports: [ConfigModule],
       useFactory: async (_config: ConfigService) => ({

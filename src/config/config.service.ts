@@ -2,8 +2,8 @@ import * as Joi from 'joi';
 import { Injectable } from '@nestjs/common';
 import * as dotenv from 'dotenv';
 import * as fs from 'fs';
-import { tryCatch } from "rxjs/internal-compatibility";
-import { log } from "util";
+import { tryCatch } from 'rxjs/internal-compatibility';
+import { log } from 'util';
 
 /**
  * Env config
@@ -65,10 +65,11 @@ export class ConfigService {
       EMAIL_USER: Joi.string(),
       EMAIL_PASSWORD: Joi.string(),
       LOGS_WRITE: Joi.boolean(),
-      URL_LOGS: Joi.string().required()
+      URL_LOGS: Joi.string().required(),
     });
 
-    const { error, value: validatedEnvConfig } = envVarsSchema.validate(envConfig);
+    const { error, value: validatedEnvConfig } =
+      envVarsSchema.validate(envConfig);
     if (error) {
       console.log(`Config validation error: ${error.message}`);
     }
