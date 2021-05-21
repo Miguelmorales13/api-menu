@@ -13,10 +13,9 @@ async function bootstrap() {
   app.enableCors();
   const options = new DocumentBuilder()
     .addBearerAuth()
-    .setTitle('general')
-    .setDescription('The general API description')
+    .setTitle('Menu api')
+    .setDescription('This API is used in app https://miguelmorales13.github.io/menu-vue/')
     .setVersion('1.0')
-    .addTag('general')
     .setBasePath('/api/')
     .build();
   app.use(compression());
